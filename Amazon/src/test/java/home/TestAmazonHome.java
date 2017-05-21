@@ -14,5 +14,10 @@ public class TestAmazonHome extends CommonAPI {
         String titleActual = "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more";
         Assert.assertEquals(titleActual, driver.getTitle());
         System.out.println(driver.getTitle());
+
     }
+    @Test
+    public void testDeal(){
+        clickByCss(".nav-a") ;
+}
 }

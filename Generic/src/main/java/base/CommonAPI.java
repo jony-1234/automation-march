@@ -1,17 +1,36 @@
 package base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.apache.commons.io.FileUtils;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
-import sun.management.counter.Units;
+import utility.reporting.ExtentManager;
+import utility.reporting.ExtentTestManager;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.lang.reflect.Method;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,17 +38,19 @@ import java.util.concurrent.TimeUnit;
  */
 public class CommonAPI {
 
-    public WebDriver driver = null;
-    private String saucelabs_username = "your user name";
-    private String browserstack_username = "your user name";
+
+
+    public static WebDriver driver = null;
+    private String saucelabs_username = "";
+    private String browserstack_username = "mdgolamrobbani1";
     private String saucelabs_accesskey = "your access key";
-    private String browserstack_accesskey = "your access key";
+    private String browserstack_accesskey = "J8QVVo6YWEkkSPR4yLHQ";
 
     @Parameters({"useCloudEnv","cloudEnvName","os","os_version","browserName","browserVersion","url"})
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false")String cloudEnvName,
             @Optional("Windows") String os,@Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
-            String browserVersion, @Optional("http://www.amazon.com") String url)throws IOException {
+            String browserVersion, @Optional("http://www.nyp.com") String url)throws IOException {
         if(useCloudEnv==true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName,browserstack_username,browserstack_accesskey,os,os_version, browserName, browserVersion);
@@ -113,3 +134,4 @@ public class CommonAPI {
         driver.findElement(By.cssSelector(locator)).click();
     }
 }
+

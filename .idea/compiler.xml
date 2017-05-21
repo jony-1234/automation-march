@@ -6,15 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AliBaba" />
         <module name="Amazon" />
+        <module name="CNN" />
+        <module name="ebay" />
         <module name="Generic" />
         <module name="Upscalelearning" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AliBaba" target="1.8" />
       <module name="Amazon" target="1.8" />
+      <module name="CNN" target="1.8" />
+      <module name="ebay" target="1.8" />
       <module name="Generic" target="1.8" />
       <module name="PntAutomation" target="1.8" />
+      <module name="PntAutomationPrevious" target="1.8" />
       <module name="Upscalelearning" target="1.8" />
     </bytecodeTargetLevel>
   </component>

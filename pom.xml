@@ -12,6 +12,10 @@
         <module>Generic</module>
         <module>Amazon</module>
         <module>Upscalelearning</module>
+        <module>ebay</module>
+        <module>AliBaba</module>
+        <module>CNN</module>
+        <module>CNN</module>
     </modules>
 
     <dependencyManagement>
